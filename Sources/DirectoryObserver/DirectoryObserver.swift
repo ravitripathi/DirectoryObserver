@@ -21,14 +21,14 @@ public class DirectoryObserver {
     var url: URL
     var fileURLs = [URL]()
     var observer: FSObserver?
-    var delegate: DirectoryObserverDelegate?
+    public var delegate: DirectoryObserverDelegate?
     
     /// Create a new Directory Observer
     /// - Parameters:
     ///   - url: URL of the directory to be observed
     ///   - fileSystemEvent: The DispatchSource.FileSystemEvent to which the observer should response. By default, it responds to all events
     /// - Throws: Throws an exception if the url passed does not point to a directory or does not exist
-    init(atFolderURL url: URL,
+    public init(atFolderURL url: URL,
          fileSystemEvent: DispatchSource.FileSystemEvent = .all) throws {
         var isDirectory: ObjCBool = true
         let fileExists = FileManager.default.fileExists(atPath: url.absoluteString, isDirectory: &isDirectory)

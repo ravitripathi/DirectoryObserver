@@ -18,7 +18,7 @@ public class FSObserver {
         close(fileDescriptor)
     }
     
-    init(URL: URL,
+    public init(URL: URL,
          fileSystemEvent: DispatchSource.FileSystemEvent,
          block: @escaping ()->Void) {
         self.fileDescriptor = open(URL.path, O_EVTONLY)
